@@ -1,0 +1,59 @@
+/* chỉnh nền  */
+
+body {
+    display: flex; /* xác định kiểu hiển thị và luồng vị trí của phần tử */
+    justify-content: center; /*căn giữa theo chiều ngang*/
+    align-items: center;/* căn giữa theo chiều dọc*/
+    background-color: #865b99;
+    /* min-height: 100vh;giá trị tối thiểu cho chiều cao */
+    /* background-image:url(pexels-chris-10666527.jpg) ;/*nền ảnh*/
+    /* background-size: cover;hiển thì hình nền ở kích thước tối đa mà k bị méo hoặc cắt */
+    /* background-position:center;căn giữa hình nền cả 2 chiều */ 
+}
+*{
+    margin: 0;/*xác định khoảng cách giữa các phần tử*/
+    padding: 0;/*viền*/
+    box-sizing: border-box;/* điều chỉnh kích thước mà không phải lo lắng về border và padding*/
+}
+.header--home{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background-color:pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    height: 80px;
+    width: 110px;
+}
+.header--home a{
+    position: relative;
+    left: 0;
+    margin-left: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    color: blueviolet;
+    text-decoration: none;
+}
+.header--home a::after{
+    content: "";
+    position: absolute;
+    background-color: aliceblue;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s ;
+}
+.header--home a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}

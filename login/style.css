@@ -1,0 +1,238 @@
+/* chỉnh nền  */
+body {
+    display: flex; /* xác định kiểu hiển thị và luồng vị trí của phần tử */
+    justify-content: center; /*căn giữa theo chiều ngang*/
+    align-items: center;/* căn giữa theo chiều dọc*/
+    min-height: 100vh;/*giá trị tối thiểu cho chiều cao*/
+    background-image:url(pexels-chris-10666527.jpg) ;/*nền ảnh*/
+    background-size: cover;/* hiển thì hình nền ở kích thước tối đa mà k bị méo hoặc cắt*/
+    background-position:center;/*căn giữa hình nền cả 2 chiều*/
+}
+*{
+    margin: 0;/*xác định khoảng cách giữa các phần tử*/
+    padding: 0;/*viền*/
+    box-sizing: border-box;/* điều chỉnh kích thước mà không phải lo lắng về border và padding*/
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+/* thiết kế logo */
+.logo{
+    font-size: 2em;
+    color: #000;
+    user-select: none;
+
+}
+.navigation a {
+    position: relative;
+    left: 0;
+    font-size: 1.1em;
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a::after{
+    content: "";
+    position: absolute;
+    background-color: aliceblue;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s ;
+}
+.navigation a:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.login_up{
+    display: inline-block;
+    color: aliceblue; 
+    padding: 12px 30px;
+    margin-left: 40px ;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+.login_up:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 20px;
+    background-color:rgba(59, 58, 58, 0.147);
+    backdrop-filter: blur(20px) ;
+    z-index: -1;
+    transition: all 0.25 linear;
+}
+.login_up:hover:before{
+    width: 100%;
+
+}
+.wraper{
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background: transparent;
+    font-size: 15px;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px) ;
+    box-shadow: 0 0 30px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;/*ẩn content trong phần tử khi vượt quá kích thước cho phép*/
+    transform: scale(0);
+    transition: transform .5s ease,height .2s ease;
+}
+.wraper.active-up{
+    transform: scale(1);
+}
+.wraper.active{
+    height: 500px;
+}
+.wraper .form_box {
+    width: 100%;
+    padding: 40px;
+}
+/* .form_box.login{
+    /* display: none; 
+} */
+.form_box.login{
+    transition: transform .18s ease;
+    transition: none;
+    transform: translateX(0);
+}
+.wraper.active .form_box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wraper .form_box.signin{
+    position: absolute;
+    transform: translateX(400px);
+}
+.wraper.active .form_box.signin{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wraper .icon_close {
+    position: absolute;
+    top:0;
+    right: 0;
+    font-size: 2em;
+    background-color:rgb(5,21,34);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 15px;
+    cursor: pointer;
+    z-index: 1;
+}
+.form_box h2{
+    font-size: 30px;
+    text-align: center;/*căn giữa chữ*/
+    font-weight: 800;/*độ đậm nhạt của chữ*/
+}
+.input_box{
+    position: relative;
+    width: 100%;
+    height: 35px;
+    border-bottom: 2px solid  rgb(5,21,34) ;/*viền phía dưới*/
+    margin: 30px 0; /* khoảng cách */
+}
+.input_box label {
+    position: absolute;/* định vị phần tử trên trang web*/
+    left: 5px;
+    top: 50%;
+    font-size: 1.2rem;
+    transform: translateY(-50%);
+    font-weight: 500;
+    color:rgb(5,21,34) ;
+    pointer-events: none; /* vô iệu hóa tương tác chuột*/
+    transition: .5s;
+}
+.input_box input:focus~label,
+.input_box input:valid~label {
+    top: -5px;
+}
+.input_box input {
+    width: 90%;
+    height: 100%;
+    border: none;/*  xóa viền */
+    background-color: transparent;/* màu trong */
+    outline: none;/* loại bỏ đường viền mặc định*/
+    padding: 0 35px 0 5px;
+    color:rgba(5, 21, 34, 0.873) ;
+    font-weight: 500;
+    font-size: 15px;
+}
+.input_box .icon {
+    position: absolute;
+    right: 8px;
+    top: 20%;
+    font-size: 20px;
+
+}
+.remember-for{
+    margin:-18px 0 15px;
+    font-size: 1rem;
+    color: rgb(5,21,34) ;
+    display: flex;
+    justify-content: space-between; /* căn chỉnh đều 2 bên cạnh*/
+}
+.remember-for label input {
+    accent-color:rgb(5,21,34) ;/* màu cho checkbox*/
+    margin-right: 3px;
+}
+.remember-for a {
+    font-weight: 600;
+    color: rgb(5,21,34) ;
+    text-decoration: none; /* loại bỏ hiệu ứng trang trí của văn bản*/
+}
+.remember-for a:hover{
+    text-decoration: underline;
+}
+.login-ac {
+    width: 100%;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color:  rgba(5, 21, 34, 0.699) ;
+    outline: none;
+    border: none;
+    color:aliceblue;
+    cursor: pointer;
+    font-weight: 500;
+}
+.sign--in{
+    font-size: 1.15rem;
+    margin: 25px 0 10px;
+    text-align: center;
+}
+.signin_link,
+.login_link {
+    color:rgb(5,21,34) ;
+    font-weight: 600;
+}

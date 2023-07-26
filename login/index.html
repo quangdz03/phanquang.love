@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">𝓽𝓱𝓲𝓷𝓴</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Library</a>
+            <a href="#">Settings</a>
+            <button class="login_up">Login</button>
+        </nav>
+    </header>
+    <div class="wraper">
+        <span class="icon_close"><ion-icon name="close-outline"></ion-icon></span>
+        <div class="form_box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input_box">
+                    <span class="icon"><ion-icon name="mail-open"></ion-icon></span>
+                    <input type="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input_box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember-for">
+                    <label ><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                    <button type="submit" class="login-ac">Login</button>
+                <div class="sign--in">
+                    <p>don't have a account?<a href="#" class="signin_link">Sign in</a></p> 
+                </div>
+            </form>
+        </div>
+        <div class="form_box signin">
+            <h2>Sign in</h2>
+            <form action="#">
+                <div class="input_box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label for="user">Username</label>
+                </div>
+                <div class="input_box">
+                    <span class="icon"><ion-icon name="mail-open"></ion-icon></span>
+                    <input type="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input_box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="remember-for">
+                    <label ><input type="checkbox">I agree to the terms & conditions</label>
+                </div>
+                    <button type="submit" class="login-ac">Sign in</button>
+                <div class="sign--in">
+                    <p>Already have a account?<a href="#" class="login_link">Login</a></p> 
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

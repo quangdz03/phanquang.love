@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link href="font/fontawesome-free-6.4.0-web/css/fontawesome.css" rel="stylesheet">
+    <link href="font/fontawesome-free-6.4.0-web/css/brands.css" rel="stylesheet">
+    <link href="font/fontawesome-free-6.4.0-web/css/solid.css" rel="stylesheet">
+    <link rel="stylesheet" href="font/fontawesome-free-6.4.0-web/css/all.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">   
+        <div class="logo">
+            <img src="./img/iilab_2.png" alt="">
+        </div>
+        <div class="box button-1">
+            <input type="checkbox" name="" class="on-off" id="light-dark">
+            <h3 class="on">On</h3>
+            <h3 class="off">off</h3>
+        </div>
+        <div class="box button-1">
+            <div id="led">
+
+            </div>
+        </div>
+        <div class="box button-1">
+            <div class="form">
+                <button class="minus" onclick="handleminus()">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" name="amount" id="amount" value="1">
+                <button class="plus" onclick="handleplus()">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="box button-1">
+            <input type="range" name="range" id="my-range" min="1" max="200" value="1" class="slider" onmousemove="rangeSlider(this.value)">
+            <span id="range-value"> 0 </span>
+        </div>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.7453514722115!2d108.20982347583146!3d16.078698839182962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421847a1a31a5f%3A0x26083bf0c8139e73!2zMiBUaGFuaCBTxqFuLCBUaGFuaCBCw6xuaCwgSOG6o2kgQ2jDonUsIMSQw6AgTuG6tW5nIDU1MDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1689268376933!5m2!1svi!2s"
+             width="605px" height="200px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="status map">
+
+        </div>
+
+        <div class="box button-1">
+            <button class="button-2" onclick="start()">Start</button>
+
+        </div>
+    </div>
+    <script src="./main.js">
+    </script>
+</body>
+
+</html>
